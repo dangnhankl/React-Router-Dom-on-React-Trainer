@@ -1,48 +1,35 @@
 # My React Router App
-
-Dự án này sử dụng React Router DOM phiên bản 6.16 và Bootstrap 5 để tạo ứng dụng web đơn giản với các trang khác nhau.
-
+Dự án này sử dụng React Router DOM phiên bản 6.16 và Bootstrap 5 để tạo hiểu về cấu trúc router cơ bản.
 ## Hướng Dẫn Sử Dụng
 
-1. **Cài Đặt Dependencies**: Trước hết, cài đặt các dependencies cần thiết bằng npm hoặc yarn:
-
+1. **Cài Đặt Dependencies**: 
+Trước hết, cài đặt các dependencies cần thiết bằng npm hoặc yarn:
    ```bash
-   npm install react-router-dom bootstrap
+   npx create-react-app demo
+   cd demo
+   npm install react-router-dom
 Khởi Tạo Các Component:
-
 - `Login.js`: Component cho trang đăng nhập.
 - `Layout.js`: Component cho trang gốc của ứng dụng, xử lý xác thực.
 - `Home.js`: Component cho trang chủ.
 - `Category.js`: Component cho trang danh mục.
+2. **Cấu Hình Routes**: Trong thư mục config, cấu hình đường dẫn tại file `routes.js` để quản lý các định tuyến
 
-Cấu Hình Routes:
-
-Trong thư mục config, bạn có tệp `routes.js` để quản lý các định tuyến. Hãy đảm bảo định nghĩa các tuyến dẫn cần thiết tại đây.
-
-Cấu Hình BrowserRouter:
-
-Trong tệp `index.js`, bạn cần cấu hình `BrowserRouter` để bao bọc ứng dụng của bạn với các tuyến dẫn.
+3. **Cấu Hình BrowserRouter**:Tại file `index.js`, cần cấu hình `BrowserRouter` để bọc App.
 ```javascript
-import { BrowserRouter } from 'react-router-dom';
+    import { BrowserRouter } from 'react-router-dom';
+    
+    ReactDOM.render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>,
+      document.getElementById('root')
+    );
+```
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('root')
-);
-
-Sử Dụng Layout.js Trong App:
-
-Trong tệp `App.js`, gọi `Layout.js` để bắt đầu ứng dụng và xử lý xác thực.
-
-Xử Lý Xác Thực Trong Layout.js:
-
-Trong tệp `Layout.js`, bạn có thể xử lý xác thực và điều hướng người dùng đến các trang khác dựa trên trạng thái xác thực.
-
-## Yêu Cầu Bài Tập
-
-Dự án này có thể mở rộng bằng cách thêm các tính năng và trang mới, cải thiện giao diện, hoặc triển khai xác thực.
+4. **Sử Dụng Layout.js Trong App**:
+4.1 Trong tệp `App.js`, gọi `Layout.js` để bắt đầu ứng dụng và xử lý xác thực.
+4.2 Xử Lý trong Layout.js
 
 ## Tài Liệu Tham Khảo
 
