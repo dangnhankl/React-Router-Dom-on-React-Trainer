@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# My React Router App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dự án này sử dụng React Router DOM phiên bản 6.16 và Bootstrap 5 để tạo ứng dụng web đơn giản với các trang khác nhau.
 
-## Available Scripts
+## Hướng Dẫn Sử Dụng
 
-In the project directory, you can run:
+1. **Cài Đặt Dependencies**: Trước hết, cài đặt các dependencies cần thiết bằng npm hoặc yarn:
 
-### `npm start`
+   ```bash
+   npm install react-router-dom bootstrap
+Khởi Tạo Các Component:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `Login.js`: Component cho trang đăng nhập.
+- `Layout.js`: Component cho trang gốc của ứng dụng, xử lý xác thực.
+- `Home.js`: Component cho trang chủ.
+- `Category.js`: Component cho trang danh mục.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Cấu Hình Routes:
 
-### `npm test`
+Trong thư mục config, bạn có tệp `routes.js` để quản lý các định tuyến. Hãy đảm bảo định nghĩa các tuyến dẫn cần thiết tại đây.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cấu Hình BrowserRouter:
 
-### `npm run build`
+Trong tệp `index.js`, bạn cần cấu hình `BrowserRouter` để bao bọc ứng dụng của bạn với các tuyến dẫn.
+```javascript
+import { BrowserRouter } from 'react-router-dom';
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Sử Dụng Layout.js Trong App:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Trong tệp `App.js`, gọi `Layout.js` để bắt đầu ứng dụng và xử lý xác thực.
 
-### `npm run eject`
+Xử Lý Xác Thực Trong Layout.js:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Trong tệp `Layout.js`, bạn có thể xử lý xác thực và điều hướng người dùng đến các trang khác dựa trên trạng thái xác thực.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Yêu Cầu Bài Tập
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Dự án này có thể mở rộng bằng cách thêm các tính năng và trang mới, cải thiện giao diện, hoặc triển khai xác thực.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Tài Liệu Tham Khảo
 
-## Learn More
+- [React Router DOM Documentation](https://reactrouter.com/)
+- [Bootstrap Documentation](https://getbootstrap.com/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
